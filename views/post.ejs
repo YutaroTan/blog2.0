@@ -1,0 +1,12 @@
+<%-include("partials/Header.ejs") %>
+<div class="Post">
+    <h1>Please write the title and the content of your blog below</h1>
+    <form class="inputSection" action="/view" method="post">
+        <label for="title">Title:</label>
+        <input name="title:" type="text" class="feedback-input" placeholder="title" />
+        <label for="Content">Content:</label>
+        <textarea name="content" class="feedback-input TextInput" placeholder="content"></textarea>
+        <input class="post1 postBttn" type="submit" value="post" />
+    </form>
+</div>
+<%-include("partials/footer.ejs") %>

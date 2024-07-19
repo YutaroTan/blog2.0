@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+    background-color: #fafafc;
+     /* Background color similar to the header in the image */
+    
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #333336; /* Background color similar to the header in the image */
+    height: 50px; /* Adjust height as needed */
+    font-family: 'Times New Roman', Times, serif;
+}
+p{
+    font-family:'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: #fff;
+}
+.image .icon{
+    height: 30px; /* Adjust size of the logo */
+    width: auto;
+}
+
+.operation {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+.operation button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.operation button:hover {
+    text-decoration: underline;
+    color:azure;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #333336;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.contact{
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.introductionPage{
+    display: flex;
+    flex-direction: column;
+    height:90vh;
+    justify-content: center;
+    gap: 6rem;
+    align-items: center;
+}
+h1{
+    width: 50%;
+    text-align: center;
+    font-size: 3.5rem;
+    color: #333333;
+}
+
+.PostAndView{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height:10%;
+}
+
+.post1, .view1{
+    width:30%;
+    margin: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #222222;
+    cursor: pointer;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 1.5em;
+}
+/* animation of the button */
+.post1:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+.post1:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+  
+.post1:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+.view1:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+.view1:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+  
+.view1:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+/* End of animation of the button */
+.Post{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+.postBttn{
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+.inputSection{
+    width:50%;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #E7E9EB;
+    gap: 0.5rem;
+    padding: 10px;
+    
+}
+.feedback-input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.TextInput{
+    height: 300px;
+    resize: vertical;
+}
