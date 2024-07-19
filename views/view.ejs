@@ -1,3 +1,19 @@
 <%-include("partials/Header.ejs") %>
-<h1>views</h1>
+<div class="viewSection">
+    <h1 class="viewTitle">View your post</h1>
+    <form class="search" action="/edit" method="post">
+        <label class = "EditTitle" for="fname">Enter the title you want to edit or delete</label><br >
+        <input class="Edit1" type="text" id="SearchTitle" name="SearchTitle" placeholder="title">
+        <input class="Edit2" type="submit" value="Search">
+    </form>
+    <div class="displayContent">
+        <% if(locals.titleHolder){ %>
+            <% for(var j =0;j<titleHolder.length;j++){ %>
+                <h3><%= titleHolder[j] %></h3>
+                <p><%= contentHolder[j] %></p>
+            <% } %>
+        <% } %>
+    </div>
+
+</div>
 <%-include("partials/footer.ejs") %>
