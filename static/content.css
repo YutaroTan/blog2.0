@@ -206,3 +206,15 @@ h1{
 .viewTitle{
     margin-top: 20px;
 }
+.displayContent{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Display{
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #000000;
+}

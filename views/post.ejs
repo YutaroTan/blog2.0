@@ -3,22 +3,10 @@
     <h1>Please write the title and the content of your blog below</h1>
     <form class="inputSection" action="/view" method="post" id="blogForm">
         <label for="title">Title:</label>
-        <input name="title:" type="text" class="feedback-input" placeholder="title" />
+        <input name="title" type="text" class="feedback-input" placeholder="title" />
         <label for="Content">Content:</label>
         <textarea name="content" class="feedback-input TextInput" placeholder="content"></textarea>
         <input class="post1 postBttn" type="submit" value="post" />
     </form>
 </div>
-
-<%  
-    document.getElementById("blogForm").addEventListener("submit", function(event) {
-        var title = document.getElementById("title").value.trim();
-        var content = document.getElementById("content").value.trim();
-
-        if (!title || !content) {
-            event.preventDefault(); // Prevent the form from being submitted
-            alert("Both title and content must be filled out.");
-        }
-    });
-%>
 <%-include("partials/footer.ejs") %>

@@ -11,23 +11,15 @@ var content;
 let contentHolder = []
 let titleHolder = []
 
-function getTitle(req,res,next){
-    title = req.body["title:"];
-    titleHolder.push(title);
-    next();
-}
 
-function getContent(req,res,next){
-    content = req.body["content"];
-    contentHolder.push(content);
-    next();
-}
-
-
-app.use(getTitle);
-app.use(getContent);
 
 app.post("/view",(req,res)=>{
+    const title = req.body["title"];
+    const content = req.body["content"];
+
+    // Only push non-empty values
+    if (title) titleHolder.push(title);
+    if (content) contentHolder.push(content);
     res.render("view.ejs", {
         contentHolder: contentHolder,
         titleHolder: titleHolder
