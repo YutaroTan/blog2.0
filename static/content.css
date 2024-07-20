@@ -3,6 +3,10 @@ body {
     font-family:'Times New Roman', Times, serif;
     background-color: #fafafc;
      /* Background color similar to the header in the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
     
 }
 
@@ -201,7 +205,8 @@ h1{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 90vh;
+    height: auto;
+    padding-bottom:110px;
 }
 .viewTitle{
     margin-top: 20px;
