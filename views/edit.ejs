@@ -1,0 +1,15 @@
+<%-include("partials/Header.ejs") %>
+<div class="Edit">
+    <h1>Please edit the title and content of your blog below</h1>
+    <div class="inputSection">
+        <form class="inputSection Editing" action="/update" method="post">
+            <label for="title">Title:</label>
+            <textarea name="titleForEdit" type="text" class="feedback-input" placeholder="title"><% if(locals.TitleFind){ %><%= TitleFind %><% } %></textarea>
+            <label for="Content">Content:</label>
+            <textarea name="contentForEdit" class="feedback-input TextInput" placeholder="content"><% if(locals.ContentFind){ %><%= ContentFind %><% } %></textarea>
+                <input class="post1 EditBttn" type="submit" value="Edit"/>
+        </form>
+        <form class="Delete" action="/delete" method="post"><input class="post1 EditBttn" type="submit" value="delete"/></form>
+    </div>
+</div>
+<%-include("partials/footer.ejs") %>
