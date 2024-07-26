@@ -13,17 +13,46 @@ var SearchTitle;
 var TitleFind = "";
 var ContentFind = "";
 var countToEdit = 0;
+var messageContent = "";
 
 
 
 app.post("/view",(req,res)=>{
     const title = req.body["title"];
     const content = req.body["content"];
-
+    var titleMatch = false;
+    
     // Only push non-empty values
-    if (title) titleHolder.push(title);
-    if (content) contentHolder.push(content);
-    res.redirect("/view");
+    if (title) {
+        
+        for(let i=0;i<titleHolder.length;i++){
+            if(title==titleHolder[i]){
+                titleMatch = true;
+            };
+        };
+        if(!titleMatch){
+            titleHolder.push(title);
+            messageContent = "";
+            if(content){
+                contentHolder.push(content);
+            }else{
+                contentHolder.push("Content waiting to be added");
+            };
+            res.redirect("/view");
+        }else{
+            console.log("title has been taken");
+            messageContent = "title has been taken";
+            res.redirect("/post");
+            //alert
+        };
+    }else{
+        //alert
+        messageContent = "title can't be blanked";
+        res.redirect("/post");
+    };
+    console.log(messageContent);
+    console.log(titleHolder);
+    console.log(contentHolder);
 });
 app.post("/edit",(req,res)=>{
     const EditTitle = req.body["SearchTitle"];
@@ -50,7 +79,7 @@ app.get("/",(req,res)=>{
 });
 
 app.get("/post",(req,res)=>{
-    res.render("post.ejs");
+    res.render("post.ejs",{messageContent:messageContent});
 });
 
 app.get("/view",(req,res)=>{
@@ -75,6 +104,7 @@ app.post("/delete",(req,res)=>{
     contentHolder.splice(countToEdit,1);
     res.redirect("/view");
 })
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

@@ -9,4 +9,9 @@
         <input class="post1 postBttn" type="submit" value="post" />
     </form>
 </div>
+<% if (locals.messageContent && locals.messageContent.length > 0) { %>
+    <script> 
+            alert("<%= locals.messageContent %>");
+    </script>
+<% } %>
 <%-include("partials/footer.ejs") %>
