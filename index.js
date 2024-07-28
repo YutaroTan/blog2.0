@@ -1,11 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
+import axios from "axios";
 
 const app = express();
 const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("static")); // Serve static files from the "static" directory
-
+app.use(express.json());
 
 let contentHolder = []
 let titleHolder = []
@@ -15,7 +16,11 @@ var ContentFind = "";
 var countToEdit = 0;
 var messageContent = "";
 
-
+app.post("/endpoint",(req,res)=>{
+    messageContent = "";
+    console.log("reset");
+    res.redirect("/post");
+})
 
 app.post("/view",(req,res)=>{
     const title = req.body["title"];

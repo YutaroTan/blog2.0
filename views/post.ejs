@@ -10,8 +10,16 @@
     </form>
 </div>
 <% if (locals.messageContent && locals.messageContent.length > 0) { %>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script> 
-            alert("<%= locals.messageContent %>");
+        alert("<%= locals.messageContent %>");
+        axios.post('/endpoint')
+            .then(response => {
+                console.log('Success:');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });    
     </script>
 <% } %>
 <%-include("partials/footer.ejs") %>
